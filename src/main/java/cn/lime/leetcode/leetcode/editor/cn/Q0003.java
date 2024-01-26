@@ -46,32 +46,35 @@ import java.util.Set;
 
  */
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public static int lengthOfLongestSubstring(String s) {
-        if ("".equals(s)){
-            return 0;
-        }
-        int max = 1;
-        int ptrStart = 0;
-        for (int ptrEnd = 0; ptrEnd < s.length(); ptrEnd++) {
-            String subString = s.substring(ptrStart,ptrEnd+1);
-            System.out.println("[Judge] "+ subString);
-            Set<Character> set = new HashSet<>();
-            for (char c : subString.toCharArray()) {
-                set.add(c);
+public class Q0003 {
+    class Solution {
+        public static int lengthOfLongestSubstring(String s) {
+            if ("".equals(s)) {
+                return 0;
             }
-            if (subString.length()!=set.size()){
-                ptrStart++;
-            }else {
-                max = Math.max(max,ptrEnd-ptrStart+1);
+            int max = 1;
+            int ptrStart = 0;
+            for (int ptrEnd = 0; ptrEnd < s.length(); ptrEnd++) {
+                String subString = s.substring(ptrStart, ptrEnd + 1);
+                System.out.println("[Judge] " + subString);
+                Set<Character> set = new HashSet<>();
+                for (char c : subString.toCharArray()) {
+                    set.add(c);
+                }
+                if (subString.length() != set.size()) {
+                    ptrStart++;
+                } else {
+                    max = Math.max(max, ptrEnd - ptrStart + 1);
+                }
             }
+            return max;
         }
-        return max;
-    }
 
-    public static void main(String[] args) {
-        String test = "bbbbb";
-        System.out.println(lengthOfLongestSubstring(test));
+        public static void main(String[] args) {
+            String test = "bbbbb";
+            System.out.println(lengthOfLongestSubstring(test));
+        }
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
+
+}
