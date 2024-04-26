@@ -43,6 +43,7 @@
 
 package cn.lime.leetcode.leetcode.editor.cn;
 
+import cn.lime.leetcode.leetcode.editor.cn.comm.TreeNode;
 import com.sun.source.tree.Tree;
 
 import java.util.ArrayList;
@@ -55,25 +56,7 @@ public class QLCR045 {
         Solution solution = new QLCR045().new Solution();
     }
 
-    //leetcode submit region begin(Prohibit modification and deletion)
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
+    //leetcode submit region begin(Prohibit modification and deletion
 
     class Solution {
         public int findBottomLeftValue(TreeNode root) {
