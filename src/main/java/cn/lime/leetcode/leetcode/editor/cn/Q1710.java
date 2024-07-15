@@ -59,21 +59,9 @@ public class Q1710 {
     //leetcode submit region begin(Prohibit modification and deletion)
     class Solution {
         public int maximumUnits(int[][] boxTypes, int truckSize) {
-            List<int[]> sorted = Arrays.stream(boxTypes)
-                    .sorted(new Comparator<int[]>() {
-                        @Override
-                        public int compare(int[] o1, int[] o2) {
-                            if (o1[1] > o2[1]) {
-                                return -1;
-                            } else if (o1[1] < o2[1]) {
-                                return 1;
-                            } else {
-                                return 0;
-                            }
-                        }
-                    }).toList();
+            Arrays.sort(boxTypes, (a,b)->b[1]-a[1]);
             int res = 0;
-            for (int[] ints : sorted) {
+            for (int[] ints : boxTypes) {
                 if (truckSize == 0) break;
                 if (truckSize >= ints[0]) {
                     res += ints[0] * ints[1];
