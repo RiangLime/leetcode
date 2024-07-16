@@ -49,7 +49,7 @@ class Solution {
         for (char c : sentence.toCharArray()) {
             set.add(c);
         }
-        return set.size()==24;
+        return set.size()==26;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
